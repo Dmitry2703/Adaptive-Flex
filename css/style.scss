@@ -1,0 +1,393 @@
+/*------------------------------------*\
+    VARIABLES
+\*------------------------------------*/
+
+/* Colors */
+
+/* background */
+$color-bg: #ebebeb;
+$color-bg-1: #373c3f;
+$color-bg-2: #202529;
+$color-bg-3: #27212c;
+$color-bg-4: #0fa7bc;
+$color-bg-5: #bc3183;
+$color-bg-6: #5b0fa1;
+
+/* text */
+$color-text: #fff;
+$color-text-muted: #515151;
+
+/* Fonts */
+
+$font-family-text: Arial, sans-serif;
+$font-size-regular: 16px;
+$font-size-large: 22px;
+
+
+
+
+
+/*------------------------------------*\
+    HELPER CLASSES
+\*------------------------------------*/
+
+.cl:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.text-hide {
+  overflow: hidden;
+}
+
+
+
+
+
+/*------------------------------------*\
+    LAYOUT
+\*------------------------------------*/
+
+html, body { 
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: $color-bg;
+}
+
+.page-header {
+  position: relative;
+  min-height: 37px;
+  padding-left: 5.9375%; /* 19px/320px */
+  background-color: $color-bg-1;
+
+  @media screen and (min-width: 640px) {
+    min-height: 74px;
+  }
+
+  @media screen and (min-width: 980px) {
+    min-height: 97px;
+  }
+}
+
+.page-content {
+  
+}
+
+.box-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 100%;
+}
+
+
+
+
+
+/*------------------------------------*\
+    TYPOGRAPHY
+\*------------------------------------*/
+
+body {
+  font-family: $font-family-text;
+  font-weight: 500;
+  font-size: $font-size-regular;
+  line-height: 22px;
+  color: $color-text-muted;
+}
+
+
+
+
+
+/*------------------------------------*\
+    BASE
+\*------------------------------------*/
+
+/* Images */
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Links */
+
+.link {
+  color: $color-text;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* Navigation */
+
+.menu-opened {
+  display: none;
+
+  @media screen and (min-width: 980px) {
+    display: block;
+  }
+}
+
+.nav {
+  &__list {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 27px;
+    font-size: $font-size-regular;
+  }
+
+  &__link {}
+}
+
+/* Menu */
+
+.menu {
+
+  @media screen and (min-width: 980px) {
+    display: none;
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    font-family: $font-family-text;
+    font-weight: 400;
+    font-size: $font-size-regular;
+    line-height: 22px;
+    color: $color-text;
+  }
+
+  &__toggle {
+    position: relative;
+    float: right;
+    display: block;
+    width: 41px;
+    height: 37px;
+    font-size: 0;
+    background-color: $color-bg-2;
+
+    @media screen and (min-width: 640px) {
+      width: 82px;
+      height: 74px;
+    }
+  }
+
+  &__toggle-icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 16px;
+    height: 2px;
+    background-color: #fff;
+    transition: background .2s .1s;
+
+    @media screen and (min-width: 640px) {
+      width: 31px;
+      height: 4px;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 2px;
+      background-color: #fff;
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+      transition: -webkit-transform .2s, top .2s;
+      transition: transform .2s, top .2s;
+
+      @media screen and (min-width: 640px) {
+        width: 31px;
+        height: 4px;
+      }
+    }
+
+    &::before {
+      top: -6px;
+
+      @media screen and (min-width: 640px) {
+        top: -8px;
+      }
+    }
+
+    &::after {
+      top: 6px;
+
+      @media screen and (min-width: 640px) {
+        top: 8px;
+      }
+    }
+  }
+}
+
+/* Banner */
+
+.banner {
+  min-height: 175px;
+  background-color: $color-bg-4;
+  padding-top: 50px;
+  padding-left: 25px;
+  padding-right: 67px;
+
+  @media screen and (min-width: 640px) {
+    min-height: 348px;
+  }
+
+  @media screen and (min-width: 980px) {
+    min-height: 550px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    min-height: 577px;
+  }
+
+  &__caption {
+    margin: 0;
+    font-family: $font-family-text;
+    font-weight: 500;
+    font-size: $font-size-large;
+    line-height: 30px;
+    color: $color-text;
+  }
+
+  &__link {}
+}
+
+/* Text Banner */
+
+.text-banner {
+  display: flex;
+  min-height: 75px;
+  background-color: $color-bg-3;
+
+  @media screen and (min-width: 640px) {
+    min-height: 150px;
+  }
+
+  @media screen and (min-width: 980px) {
+    min-height: 234px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    min-height: 245px;
+  }
+
+  &__column {}
+
+  &__column--left {
+    width: 78.125%; /* 250px/320px */
+    background-color: $color-bg-3;
+  }
+
+  &__column--right {
+    width: 21.875%; /* 70px/320px */
+    background-color: $color-bg-5;
+  }
+}
+
+/* Pink Box With Arrow */
+
+.box1 {
+  min-height: 275px;
+  background-color: $color-bg-6;
+
+  @media screen and (min-width: 640px) {
+    min-height: 550px;
+  }
+
+  @media screen and (min-width: 980px) {
+    width: 33.3333%;
+    min-height: 282px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    min-height: 295px;
+  }
+}
+
+/* Two Boxes With Images*/
+
+.box2,
+.box3 {
+  width: 100%;
+  min-height: 276px;
+
+  @media screen and (min-width: 640px) {
+    min-height: 553px;
+  }
+
+  @media screen and (min-width: 980px) {
+    width: 33.3333%;
+    min-height: 282px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    min-height: 295px;
+  }
+}
+
+/* Text Box */
+
+.text-box {
+  padding-top: 35px;
+  padding-left: 38px;
+  padding-right: 30px;
+  padding-bottom: 70px;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__caption {
+    margin: 0;
+  }
+
+  &__column {
+    @media screen and (min-width: 980px) {
+      width: 50%;
+    }
+  }
+}
+
+
+
+
